@@ -1,0 +1,26 @@
+{
+  "name": "canga-vardiya-sistemi",
+  "version": 2,
+  "builds": [
+    {
+      "src": "client/package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "build"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "client/$1"
+    }
+  ],
+  "env": {
+    "NODE_ENV": "production"
+  },
+  "installCommand": "cd client && npm install",
+  "buildCommand": "cd client && npm run build && cp -r build ../dist",
+  "outputDirectory": "dist",
+  "framework": "create-react-app"
+} 

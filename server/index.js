@@ -14,6 +14,7 @@ const allowedOrigins = [
   'http://localhost:3000',
   'http://localhost:3001',
   'https://canga-vardiya-sistemi-production.up.railway.app',
+  'https://canga-frontend.onrender.com', // 🚀 Frontend URL eklendi
   process.env.CLIENT_URL,
   process.env.FRONTEND_URL
 ].filter(Boolean); // undefined değerleri filtrele
