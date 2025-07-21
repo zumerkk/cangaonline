@@ -1,0 +1,48 @@
+{
+  "name": "canga-zmk-vardiya-sistemi",
+  "version": "1.0.0",
+  "description": "CangaZMK - Çanga Vardiya Yönetim Sistemi - Savunma endüstrisi için özel tasarlanmış kapsamlı vardiya ve personel yönetim sistemi",
+  "main": "server/index.js",
+  "scripts": {
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "cd server && npm run dev",
+    "client": "cd client && npm start",
+    "install-deps": "npm install && cd server && npm install && cd ../client && npm install",
+    "build": "npm run install-deps && cd client && npm run build",
+    "start": "cd server && npm start",
+    "start:prod": "cd server && npm start",
+    "railway:build": "cd client && npm install && npm run build",
+    "railway:start": "cd server && npm install && npm start"
+  },
+  "keywords": [
+    "canga",
+    "vardiya",
+    "shift",
+    "management",
+    "excel",
+    "savunma",
+    "defense",
+    "industry",
+    "zmk",
+    "personnel",
+    "react",
+    "nodejs",
+    "mongodb",
+    "analytics",
+    "ai",
+    "gemini"
+  ],
+  "author": "Çanga Savunma Endüstrisi Ltd. Şti.",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zumerkk/CangaZMK.git"
+  },
+  "homepage": "https://github.com/zumerkk/CangaZMK#readme",
+  "bugs": {
+    "url": "https://github.com/zumerkk/CangaZMK/issues"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+} 

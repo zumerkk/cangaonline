@@ -1,0 +1,184 @@
+{
+  "tarih": "2025-07-03T10:54:38.626Z",
+  "analiz_turu": "Çanga Fabrika Çalışan Veri Analizi",
+  "toplam_kayit": 1,
+  "analizler": {
+    "nameSimilarities": {
+      "benzerlikler": [],
+      "duplikatlar": [],
+      "yazim_hatalari": [
+        {
+          "yanlis": "Test KULLANICI",
+          "dogru": "Test Kullanıcı",
+          "guven": 90,
+          "oneri": "Tüm isimlerin büyük/küçük harf kullanımının tutarlı hale getirilmesi önerilir."
+        }
+      ],
+      "genel_degerlendirme": "Sadece 'Test KULLANICI' isminde büyük/küçük harf tutarsızlığı tespit edilmiştir.  Verilen veri kümesi çok sınırlı olduğu için detaylı bir analiz yapılamamıştır. Daha fazla veri ile daha kapsamlı bir analiz yapılabilir. Tüm isimlerin büyük/küçük harf kullanımının tutarlı olması verinin daha güvenilir ve işlenebilir olmasını sağlayacaktır.  Duplika ve benzerlik tespiti için daha fazla veri gerekmektedir."
+    },
+    "dataConsistency": {
+      "tc_no_sorunlari": [
+        {
+          "isim": "Test KULLANICI",
+          "tc_no": "12345678901",
+          "sorun": "Geçersiz format (11 haneli olmalı)",
+          "oneri": "Doğru TC kimlik numarası ile değiştirilmeli."
+        }
+      ],
+      "departman_sorunlari": [],
+      "lokasyon_sorunlari": [],
+      "eksik_veriler": [],
+      "mantik_hatalari": [],
+      "istatistikler": {
+        "toplam_kayit": 1,
+        "sorunlu_kayit": 1,
+        "temiz_kayit": 0
+      },
+      "genel_degerlendirme": "Veri setinde 1 kayıt bulunmaktadır.  Test KULLANICI kaydında TC kimlik numarası geçersiz formattadır (11 haneli olması gerekir).  Diğer alanlarda sorun tespit edilmemiştir.  Geçersiz TC numarasının düzeltilmesi gerekmektedir."
+    },
+    "excelComparison": {
+      "eksik_isimler": [
+        "Abbas DÜZTAŞ",
+        "Ahmet ÇELİK",
+        "Abdulsamed ÇELİK",
+        "Ahmet İLGİN",
+        "Ahmet ARSLAN",
+        "Adem GÜMÜŞ",
+        "Ali GÜRBÜZ",
+        "Ali ÖKSÜZ",
+        "Ali SAVAŞ",
+        "Ali ŞİŞ YORULMAZ",
+        "Abdurrahim AKICI",
+        "Abdurrahim ÖZKUL",
+        "Ahmet AYAN",
+        "Ahmet ŞAHİN",
+        "Ahmet ÖZTÜRK",
+        "Ali KÜÇÜKALP",
+        "Ali YILDIRMAZ",
+        "Arda AYNALI",
+        "Azer Buğra KAYA",
+        "Berat ŞIYAR"
+      ],
+      "fazla_isimler": [
+        "Test KULLANICI"
+      ],
+      "potansiyel_eslesmeler": [],
+      "istatistikler": {
+        "excel_toplam": 20,
+        "db_toplam": 1,
+        "eslesen": 0,
+        "eksik": 20,
+        "fazla": 1
+      },
+      "genel_degerlendirme": "Excel'deki 20 isim veritabanında bulunamamıştır. Veritabanında ise Excel'de olmayan 1 isim bulunmaktadır.  Daha kapsamlı bir eşleşme analizi için, veritabanında daha fazla veri olması ve daha gelişmiş bir benzerlik algoritması kullanılması önerilir.  Mevcut verilerle potansiyel eşleşme önerisi yapılamamıştır."
+    },
+    "cleanupSuggestions": {
+      "oncelik_sirasi": [
+        {
+          "sira": 1,
+          "konu": "Geçersiz TC Kimlik Numaralarının Düzeltilmesi",
+          "aciliyet": "Yüksek",
+          "etki": "Kritik",
+          "tahmini_sure": "1 saat"
+        },
+        {
+          "sira": 2,
+          "konu": "Büyük/Küçük Harf Tutarsızlıklarının Düzeltilmesi",
+          "aciliyet": "Orta",
+          "etki": "Orta",
+          "tahmini_sure": "30 dakika"
+        },
+        {
+          "sira": 3,
+          "konu": "Veri Tabanıyla Excel Arasındaki Uyumsuzlukların İncelenmesi",
+          "aciliyet": "Düşük",
+          "etki": "Yüksek (potansiyel)",
+          "tahmini_sure": "Belirsiz (daha fazla veri gerektiriyor)"
+        }
+      ],
+      "adim_adim_plan": [
+        {
+          "adim": 1,
+          "baslik": "Veri Yedekleme",
+          "detay": "Mevcut veritabanının tam bir yedeğini alın.",
+          "komutlar": [
+            "Veritabanı yedekleme komutu (sisteminize göre değişir, örneğin: `mongodump` veya `mysqldump`)"
+          ],
+          "dikkat_edilecekler": [
+            "Yedek dosyasının güvenli bir konuma kaydedilmesi ve düzenli yedekleme planının oluşturulması"
+          ]
+        },
+        {
+          "adim": 2,
+          "baslik": "Geçersiz TC Kimlik Numaralarının Düzeltilmesi",
+          "detay": "Test KULLANICI kaydındaki geçersiz TC kimlik numarası doğrulanmalı ve geçerli bir numara ile değiştirilmelidir.  Veri kaynağı (örneğin, ilgili kişi) kontrol edilmelidir.",
+          "komutlar": [
+            "Veritabanı güncelleme sorgusu (SQL veya benzeri)"
+          ],
+          "dikkat_edilecekler": [
+            "Doğrulama işleminin titizlikle yapılması, yanlışlıkla geçerli bir TC numarasının değiştirilmemesi"
+          ]
+        },
+        {
+          "adim": 3,
+          "baslik": "Büyük/Küçük Harf Tutarsızlıklarının Düzeltilmesi",
+          "detay": "'Test KULLANICI' ismindeki büyük/küçük harf tutarsızlığının düzeltilmesi ve tüm isimlerde büyük/küçük harf kullanımının tutarlı hale getirilmesi.",
+          "komutlar": [
+            "Veritabanı güncelleme sorgusu (SQL veya benzeri),  metin işleme fonksiyonları (örneğin, Python'da `lower()` veya `title()` fonksiyonları)"
+          ],
+          "dikkat_edilecekler": [
+            "Tüm isimlerin tek bir standarda göre düzenlenmesi (örneğin, tüm büyük harf veya sadece ilk harf büyük)"
+          ]
+        },
+        {
+          "adim": 4,
+          "baslik": "Excel Karşılaştırmasının Genişletilmesi",
+          "detay": "Daha fazla veri ile excel karşılaştırması tekrarlanmalı ve daha gelişmiş bir benzerlik algoritması (örneğin, fuzzy matching) kullanılarak potansiyel eşleşmeler aranmalıdır.",
+          "komutlar": [
+            "Benzerlik analizi algoritmaları (örneğin, Python'da `fuzzywuzzy` kütüphanesi)",
+            "Veritabanı sorgulama işlemleri"
+          ],
+          "dikkat_edilecekler": [
+            "Verilerin doğru ve eksiksiz olması, eşleşme algoritmasının hassasiyetinin ayarlanması"
+          ]
+        },
+        {
+          "adim": 5,
+          "baslik": "Veri Kalite Kontrolü",
+          "detay": "Veri temizleme işlemlerinden sonra, verilerin doğruluğunu ve tutarlılığını doğrulamak için tekrarlı kontroller yapılmalıdır.",
+          "komutlar": [
+            "Veritabanı sorgulama işlemleri",
+            "veri görselleştirme araçları"
+          ],
+          "dikkat_edilecekler": [
+            "Örnek verilerin manuel olarak incelenmesi, tutarsızlıkların tespiti"
+          ]
+        }
+      ],
+      "risk_degerlendirmesi": {
+        "yuksek_risk": [
+          "Veritabanı yedekleme işleminin başarısız olması, yanlış veri güncellemeleri sonucu veri kaybı"
+        ],
+        "orta_risk": [
+          "Veri temizleme işlemlerinin yanlış uygulanması, geri dönüşü zor hatalar"
+        ],
+        "dusuk_risk": [
+          "Büyük/küçük harf düzeltmeleri gibi küçük ölçekli düzeltmeler"
+        ]
+      },
+      "dogrulama_yontemleri": [
+        "Kayıt sayısı kontrolü (önce ve sonra)",
+        "Örnek veri kontrolü (rastgele kayıtların manuel olarak incelenmesi)",
+        "Veri tutarlılık kontrolleri (örneğin, TC kimlik numarası formatı, isim uzunluğu gibi)",
+        "Veri dağılımının görselleştirilmesi (histogram, box plot gibi)",
+        "Excel karşılaştırma sonuçlarının tekrar kontrolü"
+      ],
+      "genel_strateji": "Veri temizleme stratejisi, öncelikle kritik hataların (geçersiz TC kimlik numaraları) düzeltilmesine odaklanmaktadır. Daha sonra, büyük/küçük harf tutarsızlıkları gibi daha az kritik hatalar ele alınacaktır.  Excel karşılaştırma işlemi ise daha fazla veri elde edildikten sonra daha kapsamlı bir şekilde tekrarlanacaktır.  Her adımda veri yedeklemesi yapılarak veri kaybı riski en aza indirilecektir.  Veri temizleme işlemlerinin sonunda, kapsamlı bir veri doğrulama süreci uygulanarak temiz verilerin doğruluğu ve tutarlılığı teyit edilecektir."
+    }
+  },
+  "ozet": {
+    "isim_benzerlik_sayisi": 0,
+    "tutarlilik_sorunu_sayisi": 0,
+    "excel_eksik_sayisi": 20
+  }
+}
